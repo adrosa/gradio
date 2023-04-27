@@ -182,8 +182,8 @@ def launched_telemetry(blocks: gradio.Blocks, data: Dict[str, Any]) -> None:
             requests.post(
                 f"{analytics_url}gradio-launched-telemetry/", data=data, timeout=5
             )
-        except Exception:
-            pass
+        except Exception as e:
+            print("Error while sending telemetry: {}".format(e))
 
     threading.Thread(target=launched_telemtry_thread, args=(data,)).start()
 
