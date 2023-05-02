@@ -19,5 +19,5 @@ def load_ipython_extension(ipython):
                 "Usage of gradio.Interface with %%blocks may result in errors."
             )
         with __demo.clear():
-            exec(cell, None, local_ns)
+            exec(cell, dict(demo = __demo), local_ns)
             __demo.launch(quiet=True)
