@@ -44,6 +44,7 @@
 			dispatch("change");
 		}
 	}
+	$: console
 </script>
 
 <div
@@ -119,7 +120,7 @@
 	.wrap {
 		padding: var(--block-padding);
 		height: 100%;
-		max-height: 480px;
+		max-height: var(--size-screen-h);
 		overflow-y: auto;
 	}
 
